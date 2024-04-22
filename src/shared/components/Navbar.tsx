@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center w-9/12">
                 <Link href="/">
                     <div className="flex space-x-3 items-center"> 
-                        <Image src="/brand-logo-blue.png" width={60} height={60} alt="brand-logo" /> 
+                        <Image src="/brand-logo-safron.png" width={60} height={60} alt="brand-logo" /> 
                         <h1 className="kalam-bold text-primary-500 text-xl">coder e-lib</h1>
                     </div>
                 </Link>
