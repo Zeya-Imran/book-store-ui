@@ -8,12 +8,12 @@ const Navbar = () => {
                 <Link href="/">
                     <div className="flex space-x-3 items-center"> 
                         <Image src="/brand-logo-blue.png" width={60} height={60} alt="brand-logo" /> 
-                        <h1 className="kalam-bold text-[#006bdb] text-xl">coder e-lib</h1>
+                        <h1 className="kalam-bold text-primary-500 text-xl">coder e-lib</h1>
                     </div>
                 </Link>
                 <div className="flex space-x-3">
-                    <button className="px-4 py-2 bg-white rounded-md border border-[#006bdb]">sign in</button>
-                    <button className="px-4 py-2 text-white rounded-md bg-[#006bdb]">Sign up</button>
+                    <button className="px-4 py-2 bg-white rounded-md border border-primary-500 hover:bg-primary-200 hover:text-white transition-all ease-linear">Sign in</button>
+                    <button className="px-4 py-2 text-white rounded-md bg-primary-500  hover:bg-primary-700 transition-all ease-linear">Sign up</button>
                 </div>
             </div>
         </nav>
