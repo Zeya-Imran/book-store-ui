@@ -23,7 +23,7 @@ const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
   if (!book) throw new Error("Book Not Found");
 
   return (
-    <section className="mx-auto grid max-w-6xl grid-cols-3 gap-10 px-5 py-10">
+    <section className="mx-auto grid max-w-5xl grid-cols-3 gap-10 px-5 py-10">
       <div className="col-span-2 pr-8 text-primary-950">
         <h2 className="mb-5 text-5xl font-bold leading-[1.1]">{book.title}</h2>
         <span className="font-semibold">by {book.author.name}</span>
