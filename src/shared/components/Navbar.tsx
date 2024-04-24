@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 const Navbar = () => {
     return(
-        <nav className="flex justify-center border-b shadow-sm">
-            <div className="flex justify-between items-center w-9/12">
+        <nav className="border-b shadow-sm">
+            <div className="mx-auto max-w-7xl justify-between items-center flex ">
                 <Link href="/">
                     <div className="flex space-x-3 items-center"> 
                         <Image src="/brand-logo-safron.png" width={60} height={60} alt="brand-logo" /> 
