@@ -1,5 +1,6 @@
 import { Book } from "@/types";
 import Image from "next/image";
+import DownloadButton from "./DownloadButton";
 
 const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
   let book: Book | null = null;
@@ -15,7 +16,6 @@ const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
     if (!response.ok) throw new Error("Error fetching book");
 
     book = await response.json();
-
   } catch (error) {
     console.log(error);
   }
@@ -27,13 +27,29 @@ const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
       <div className="col-span-2 pr-8 text-primary-950">
         <h2 className="mb-5 text-5xl font-bold leading-[1.1]">{book.title}</h2>
         <span className="font-semibold">by {book.author.name}</span>
-        <p className="mt-5 text-lg leading-8">Dive into the world of object-oriented programming with our comprehensive guide to C++. Learn the fundamentals of OOP concepts like classes, objects, inheritance, and polymorphism, and master the art of building efficient and modular software. Whether you are a beginner or an experienced programmer, this book equips you with the skills to excel in C++ development</p>
+        <p className="mt-5 text-lg leading-8 text-justify mb-10">
+          Dive into the world of object-oriented programming with our
+          comprehensive guide to C++. Learn the fundamentals of OOP concepts
+          like classes, objects, inheritance, and polymorphism, and master the
+          art of building efficient and modular software. Whether you are a
+          beginner or an experienced programmer, this book equips you with the
+          skills to excel in C++ development
+        </p>
+        <DownloadButton fileLink={book.file} />
       </div>
-      <div className="flex justify-end"><Image src={book.coverImage} alt={book.title} width={0} height={0} sizes="100vw" style={{width:'auto', height:'auto'}} /></div>
+      <div className="flex justify-end">
+        <Image
+          src={book.coverImage}
+          alt={book.title}
+          width={0}
+          height={0}
+          sizes="100vw"
+          layout="responsive"
+          style={{ width: "auto", height: "auto" }}
+        />
+      </div>
     </section>
-  )
-  
-
+  );
 };
 
 export default SingleBookPage;
