@@ -23,9 +23,9 @@ const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
   if (!book) throw new Error("Book Not Found");
 
   return (
-    <section className="mx-auto grid max-w-5xl grid-cols-3 gap-10 px-5 py-10">
-      <div className="col-span-2 pr-8 text-primary-950">
-        <h2 className="mb-5 text-5xl font-bold leading-[1.1]">{book.title}</h2>
+    <section className="mx-auto grid max-w-5xl grid-cols-1 md:grid-cols-3 gap-10 md:px-5 px-2 md:py-10 py-8">
+      <div className="md:col-span-2 pr-8 text-primary-950 md:order-1 order-2">
+        <h2 className="mb-5 md:text-5xl text-4xl font-bold leading-[1.1]">{book.title}</h2>
         <span className="font-semibold">by {book.author.name}</span>
         <p className="mt-5 text-lg leading-8 text-justify mb-10">
           Dive into the world of object-oriented programming with our
@@ -37,7 +37,7 @@ const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
         </p>
         <DownloadButton fileLink={book.file} />
       </div>
-      <div className="flex justify-end">
+      <div className="md:col-span-1 flex justify-center md:justify-end md:order-2 order-1">
         <Image
           src={book.coverImage}
           alt={book.title}
